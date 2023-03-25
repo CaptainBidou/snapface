@@ -7,14 +7,38 @@ import { FaceSnap } from './models/face-snap.models';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  mySnap!: FaceSnap;
+  faceSnaps!: FaceSnap[];
 
+  ngOnInit() {
+    this.faceSnaps = [
+      {
+        title: 'Face Snap',
+        description: 'This is a Face Snap',
+        createdDate: new Date(),
+        snaps: 140,
+        imageUrl: 'https://www.w3schools.com/w3images/lights.jpg',
+        like: true,
+        location: 'Paris',
+      },
+      {
+        title: 'Face Snap',
+        description: 'This is a Face Snap',
+        createdDate: new Date(),
+        snaps: 6,
+        imageUrl: 'https://www.w3schools.com/w3images/lights.jpg',
+        like: true,
+        location: 'Paris',
+      },
+      {
+        title: 'Face Snap',
+        description: 'This is a Face Snap',
+        createdDate: new Date(),
+        snaps: 6,
+        imageUrl: 'https://www.w3schools.com/w3images/lights.jpg',
+        like: true,
+        location: 'Paris',
+      },];
 
-
-
-
-  ngOnInit(): void {
-    this.mySnap = new FaceSnap('Face Snap', 'This is a Face Snap', new Date(), 6, 'https://www.w3schools.com/w3images/lights.jpg',true);
   }
 
 
