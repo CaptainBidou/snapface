@@ -1,0 +1,18 @@
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    top: 0;
+    width: 100%;
+}
+
+a {
+    color: #0dd31e;
+    text-decoration: none;
+
+    &:hover {
+        color: #04521b;
+        text-decoration: none;
+    }
+
+    margin-right: 5px;
+}

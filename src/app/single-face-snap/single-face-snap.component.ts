@@ -1,23 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FaceSnap } from '../models/face-snap.models';
 import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component({
-  selector: 'app-face-snap',
-  templateUrl: './face-snap.component.html',
-  styleUrls: ['./face-snap.component.scss']
+  selector: 'app-single-face-snap',
+  templateUrl: './single-face-snap.component.html',
+  styleUrls: ['./single-face-snap.component.scss']
 })
-export class FaceSnapComponent implements OnInit {
+export class SingleFaceSnapComponent implements OnInit {
+  faceSnap!: FaceSnap;
 
-  @Input() faceSnap!: FaceSnap;
-
-  constructor(private faceSnapsService: FaceSnapsService) { }
+  constructor(private faceSnapsService: FaceSnapsService, private route: ActivatedRoute) { }
 
   like!: boolean;
   likeText!: string;
 
 
   ngOnInit() {
+
+    const id = +this.route.snapshot.params['id'];
+    this.faceSnap = this.faceSnapsService.getFaceSnapById(id);
     if (this.faceSnap.like) {
       this.likeText = 'Oh un-snap!';
     } else {
@@ -42,7 +45,4 @@ export class FaceSnapComponent implements OnInit {
       this.onAddSnap();
     }
   }
-
-
-
 }
