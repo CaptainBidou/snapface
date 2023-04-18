@@ -14,5 +14,10 @@ a {
         text-decoration: none;
     }
 
+    & > h1 {
+        color: lightgray;
+  
+    }
+
     margin-right: 5px;
 }

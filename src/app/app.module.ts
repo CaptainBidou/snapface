@@ -9,6 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule}from '@angular/common/http';
+import { ApiUserComponent } from './api-user/api-user.component';
+import { UserComponent } from './user/user.component';
+import { ApiUsersComponent } from './api-users/api-users.component';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +23,18 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFaceSnapComponent
+    SingleFaceSnapComponent,
+    ApiUserComponent,
+    UserComponent,
+    ApiUsersComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' }

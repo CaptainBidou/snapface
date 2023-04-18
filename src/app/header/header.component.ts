@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+import { FaceSnapsService } from '../services/face-snaps.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+ 
+  
+  
 }

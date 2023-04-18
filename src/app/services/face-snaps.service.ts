@@ -1,10 +1,29 @@
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap.models";
+import { HttpClient } from "@angular/common/http";
+import { Observable, map } from "rxjs";
+import { ApiUser } from "../models/api-user.models";
+import { ApiUsers } from "../models/api-users.models";
 
 @Injectable({
     providedIn: 'root'
 })
+
+
 export class FaceSnapsService {
+    constructor (private http: HttpClient){
+    }
+    
+
+    getReponse(): Observable<ApiUser> {
+        return this.http.get<ApiUser>("https://evanerds.fr/api/v1/users/1");
+    }
+
+    getAllUsers(): Observable<ApiUsers> {
+        return this.http.get<ApiUsers>("https://evanerds.fr/api/v1/users");
+    }
+
+
     faceSnaps: FaceSnap[] = [
         {
             id: 1,
