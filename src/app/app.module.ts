@@ -14,7 +14,8 @@ import {HttpClientModule}from '@angular/common/http';
 import { ApiUserComponent } from './api-user/api-user.component';
 import { UserComponent } from './user/user.component';
 import { ApiUsersComponent } from './api-users/api-users.component';
-
+import { HttpInterceptorProviders } from './interceptors/index';
+import { FormConnexionComponent } from './form-connexion/form-connexion.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ApiUsersComponent } from './api-users/api-users.component';
     ApiUserComponent,
     UserComponent,
     ApiUsersComponent,
+    FormConnexionComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { ApiUsersComponent } from './api-users/api-users.component';
 
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'fr-FR' }
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
+    HttpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

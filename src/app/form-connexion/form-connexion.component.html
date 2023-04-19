@@ -1,0 +1,15 @@
+<h3>Connexion :</h3>
+
+<form (ngSubmit)="SeConnecter()">
+    <div class="form-group" >
+        <label for="tel" >Téléphone</label>
+        <input class="form-control" name="userTel" id="tel" placeholder="Téléphone" [(ngModel)]="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="userPassword" class="form-control" id="password" placeholder="Mot de passe" [(ngModel)]="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+</form>
+
+<p *ngIf="token$ |async as reponse"></p>

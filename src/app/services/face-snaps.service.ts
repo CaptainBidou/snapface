@@ -15,8 +15,8 @@ export class FaceSnapsService {
     }
     
 
-    getReponse(): Observable<ApiUser> {
-        return this.http.get<ApiUser>("https://evanerds.fr/api/v1/users/1");
+    getReponse(id:number): Observable<ApiUser> {
+        return this.http.get<ApiUser>("https://evanerds.fr/api/v1/users/"+id);
     }
 
     getAllUsers(): Observable<ApiUsers> {
